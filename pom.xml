@@ -19,5 +19,6 @@
     <modules>
         <module>factorserv</module>
         <module>currencyserv</module>
+        <module>service-discovery-server</module>
     </modules>
 </project>
