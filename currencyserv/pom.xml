@@ -12,9 +12,6 @@
     <version>1.0-SNAPSHOT</version>
     <name>currencyserv</name>
     <description>Currency Service</description>
-    <properties>
-        <java.version>10</java.version>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -48,7 +45,17 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                    <image>
+                        <name>sb/sanchita/${project.artifactId}</name>
+                    </image>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build-image</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
