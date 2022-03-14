@@ -32,7 +32,7 @@ jobs:
         run: mvn -version && mvn -B package --file pom.xml
 
       - name: Stage Build Artifacts
-        run: mkdir artifacts && find . -name \*.jar -exec cp {} artifacts \;
+        run: mkdir artifacts && find . -name \*.jar -exec cp {} artifacts \; && rm -f artifacts/maven-wrapper.jar
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
