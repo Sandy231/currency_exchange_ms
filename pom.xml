@@ -10,15 +10,28 @@
     </parent>
     <properties>
         <java.version>10</java.version>
+        <spring-cloud.version>2021.0.1</spring-cloud.version>
     </properties>
     <groupId>org.sanchita</groupId>
     <artifactId>microservice-parent</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
 
+    <dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
     <modules>
+        <module>service-discovery-server</module>
         <module>factorserv</module>
         <module>currencyserv</module>
-        <module>service-discovery-server</module>
     </modules>
 </project>
