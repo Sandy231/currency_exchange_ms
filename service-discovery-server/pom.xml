@@ -25,6 +25,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+<<<<<<< HEAD
                 <configuration>
                     <image>
                         <name>sb/sanchita/${project.artifactId}</name>
@@ -37,6 +38,8 @@
                         </goals>
                     </execution>
                 </executions>
+=======
+>>>>>>> 2c72135d3917cd87d5f2e81a66f7733ef2da13df
             </plugin>
         </plugins>
     </build>
