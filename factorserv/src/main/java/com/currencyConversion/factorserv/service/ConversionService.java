@@ -17,10 +17,14 @@ import java.util.function.Consumer;
 public class ConversionService {
 
     public static final String BASE_COUNTRY = "US";
+    final ConversionRepository conversionRepo;
+    final CountryRepository countryRepo;
+
     @Autowired
-    ConversionRepository conversionRepo;
-    @Autowired
-    CountryRepository countryRepo;
+    public ConversionService(ConversionRepository conversionRepo, CountryRepository countryRepo) {
+        this.conversionRepo = conversionRepo;
+        this.countryRepo = countryRepo;
+    }
 
     public ExchangeFactorModel addConversionFactor(String countryCode, double conversionFactor) {
         ExchangeFactorModel factorModel = new ExchangeFactorModel(Type.ADD);
