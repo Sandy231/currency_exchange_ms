@@ -40,12 +40,9 @@ jobs:
           name: Build_Artifact
           path: artifacts/*
 
-<<<<<<< HEAD
       - name: Build Image
         run: mvn spring-boot:build-image -Dspring-boot.build-image.imageName=sb/test
 
-=======
->>>>>>> 2c72135d3917cd87d5f2e81a66f7733ef2da13df
       - name: Publish to GitHub Packages Apache Maven
         run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/$GITHUB_REPOSITORY
         env:
