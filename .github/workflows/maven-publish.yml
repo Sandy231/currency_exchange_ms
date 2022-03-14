@@ -6,8 +6,8 @@ name: Maven Package
 on:
   release:
     types: [ created ]
-  [ push ]
-  [ pull_request ]
+  push:
+  pull_request:
   workflow_dispatch:
 
 jobs:
