@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -38,11 +39,12 @@ public class FactorServController {
     }
 
     @GetMapping("/factor/{code}")
-    public ResponseEntity<?> getConversionFactor(@PathVariable String code) {
+    public ResponseEntity<ImmutablePair<String,Double>> getConversionFactor(@PathVariable String code) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(new ImmutablePair<>(code, conversionService.getConversionFactor(code)));
         } catch (NoSuchElementException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Conversion Factor with given CC " + code + " not found!");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Conversion Factor with given CC " + code + " not found!");
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Conversion Factor with given CC " + code + " not found!");
         }
     }
 
