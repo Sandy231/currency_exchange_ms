@@ -1,4 +1,4 @@
-package org.sanchita.currencyserv.service;
+package com.currencyConversion.currencyserv.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class CurrencyService {
 
     final RestTemplate restTemplate;
 
-    @Value("${serv.factorservice.name}")
+    @Value("${serv.factorservice.name}")  // reading value from prop file
     private String factorService;
 
     @Autowired

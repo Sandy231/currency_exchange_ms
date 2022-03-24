@@ -1,6 +1,6 @@
-package org.sanchita.currencyserv.controller;
+package com.currencyConversion.currencyserv.controller;
 
-import org.sanchita.currencyserv.service.CurrencyService;
+import com.currencyConversion.currencyserv.service.CurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package org.sanchita.servicediscoveryserver;
+package com.currencyConversion.servicediscoveryserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
